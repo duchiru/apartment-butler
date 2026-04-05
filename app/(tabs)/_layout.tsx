@@ -1,10 +1,15 @@
 import { Tabs } from "expo-router";
 import { HomeIcon, UserIcon, WalletIcon, ZapIcon } from "lucide-react-native";
 
+import TabBar from "@/components/tab-bar";
+
 export default function _layout() {
   // Always make sure the number of tabs is even, so that the quick action can be in the middle of the tab bar.
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs
+      tabBar={(props) => <TabBar {...props} />}
+      screenOptions={{ headerShown: false }}
+    >
       <Tabs.Screen
         name="index"
         options={{
