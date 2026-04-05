@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function ExpensesPage() {
+export default function SmartHomePage() {
   return (
     <View>
-      <Text>Expenses Page</Text>
+      <Text>Smart Home Page</Text>
     </View>
   );
 }
