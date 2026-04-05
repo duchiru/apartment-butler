@@ -13,7 +13,7 @@ export default function _layout() {
       <Tabs.Screen
         name="index"
         options={{
-          tabBarLabel: "Home",
+          tabBarLabel: "Dashboard",
           tabBarIcon: (props) => <HomeIcon {...props} />,
         }}
       />
