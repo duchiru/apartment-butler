@@ -96,7 +96,7 @@ export default function TabBar({
       <View style={styles.quickActionContainer}>
         <PlatformPressable
           onPress={() => {
-            navigation.navigate("add-receipt");
+            navigation.navigate("receipt");
           }}
           style={styles.quickActionButton}
         >
