@@ -9,7 +9,11 @@ import {
   View,
 } from "react-native";
 
+import DotGridBackground from "@/components/dot-grid-background";
+
 import { supabase } from "@/lib/supabase";
+
+const PLACEHOLDER_TEXT_COLOR = "#6B7280";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -48,7 +52,9 @@ export default function LoginScreen() {
       style={styles.container}
       behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
-      <View style={styles.card}>
+      <DotGridBackground />
+
+      <View style={styles.content}>
         <View style={styles.fieldGroup}>
           <Text style={styles.label}>Email</Text>
           <TextInput
@@ -66,6 +72,7 @@ export default function LoginScreen() {
             autoCorrect={false}
             textContentType="emailAddress"
             autoComplete="email"
+            placeholderTextColor={PLACEHOLDER_TEXT_COLOR}
           />
         </View>
 
@@ -87,6 +94,7 @@ export default function LoginScreen() {
             textContentType="password"
             autoComplete="password"
             onSubmitEditing={handleLogin}
+            placeholderTextColor={PLACEHOLDER_TEXT_COLOR}
           />
         </View>
 
@@ -115,12 +123,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: "#F3F4F6",
   },
-  card: {
-    borderRadius: 16,
-    padding: 20,
-    backgroundColor: "#FFFFFF",
-    borderWidth: 1,
-    borderColor: "#E5E7EB",
+  content: {
+    width: "100%",
   },
   fieldGroup: {
     marginTop: 14,
